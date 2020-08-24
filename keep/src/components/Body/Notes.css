@@ -1,0 +1,11 @@
+i.fa-circle{
+    visibility: hidden;
+}
+
+.fa-stack:hover > .fa-circle{
+    visibility: visible;
+}
+
+i.fa-lightbulb{
+    color: lightgray;
+}

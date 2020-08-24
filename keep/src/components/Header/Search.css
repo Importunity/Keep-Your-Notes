@@ -1,0 +1,15 @@
+.search{
+    width: 800px;
+    border-radius: 8px;
+    text-indent: 5%;
+    height: 50px;
+    border-color: gray;
+}
+
+.fa-search { 
+    position: absolute;
+    top: 26px;
+    margin-left: 1%;
+    font-size: 15px;
+    color: black;
+}

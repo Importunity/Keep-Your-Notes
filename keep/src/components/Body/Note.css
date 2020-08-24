@@ -1,0 +1,13 @@
+.take-a-note{
+    box-shadow: 1px 4px 3px darkgray;
+    border-radius: 10px;
+    height: 35px;
+    width: 50%;
+    padding-left: 1%;
+    border-color: gray;
+}
+
+.take-a-note-container{
+    margin-top: 5%;
+    margin-left: 16%;
+}
