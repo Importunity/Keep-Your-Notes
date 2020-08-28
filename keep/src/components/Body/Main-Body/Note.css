@@ -2,3 +2,34 @@
     margin-top: 3%;
     width: 25%;
 }
+
+.note-header{
+    padding-bottom: 0;
+}
+
+.note-body{
+    padding-top: 0;
+    padding-bottom:0;
+    margin-top: -5%;
+}
+
+.note-footer{
+    background-color: white; 
+    border: none;
+    padding-top: 0;
+}
+
+.items{
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.items:hover{
+    opacity: 1;
+}
+
+.thumb{
+    float:right;
+}
+
+
