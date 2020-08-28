@@ -15,14 +15,14 @@ function Navbar(){
                     <ul className="navbar-nav mr-auto left-items">
                         <li className="nav-item nav-left active items"><MainMenu /></li>
                         <li className="nav-item nav-left active items">
-                            <span class="fa-stack fa-lg">
+                            <span className="fa-stack fa-lg">
                                 <i title="Keep" className="fa fa-sticky-note fa-lg fa-stack-2x"></i>
                                 <i className="far fa-lightbulb fa-md fa-stack-1x fa-inverse"></i>
                             </span>
                         </li>
                         <li className="nav-item active items"><Logo /></li>
                     </ul>
-                    <ul className="navbar-nav mr-auto search">
+                    <ul className="navbar-nav mr-auto search-bar">
                         <li className="nav-item active"><Search/></li>
                     </ul>
                     <ul className="navbar-nav ml right-items">

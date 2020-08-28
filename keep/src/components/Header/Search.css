@@ -3,7 +3,8 @@
     border-radius: 8px;
     text-indent: 5%;
     height: 50px;
-    border-color: gray;
+    border: 1px gray;
+    background-color: lightgray;
 }
 
 .fa-search { 
@@ -13,3 +14,10 @@
     font-size: 15px;
     color: black;
 }
+
+.search:focus{
+    background-color: white;
+    box-shadow: 1px 1px 1px gray;
+}
+
+
