@@ -1,6 +1,8 @@
 import React from 'react';
-import SideNav from './SideNav';
-import Note from './Note';
+import SideNav from './Side-Navigation/SideNav';
+import ContentArea from './Main-Body/ContentArea';
+
+
 
 function Frame(){
     return(
@@ -10,7 +12,7 @@ function Frame(){
                     <SideNav />
                 </div>
                 <div className="col-10">
-                    <Note />
+                    <ContentArea />
                 </div>
             </div>
         </div>
