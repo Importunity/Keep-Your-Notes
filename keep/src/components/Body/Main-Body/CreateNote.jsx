@@ -24,7 +24,19 @@ let useClickOutside = (handler) =>{
     return domNode;
 };
 
+// used to show the center lightbulb of the page
+const CenterLightbulb = () => (
+    <div className="empty-content">
+        <i id="cn-lightbulb" className="far fa-lightbulb fa-5x"></i>
+        <h5>Notes you add appear here</h5>
+    </div>
+)
+
 function CreateNote(props){
+    /**
+     * lightbulb shows on default
+     */
+    const[showLightbulb, setShowLightBulb] = React.useState(true);
     /**
      * creates a note
      * currently the note is default which has an empty content and title
@@ -74,7 +86,9 @@ function CreateNote(props){
             addNote();
             // reset change to false 
             setChange(false);
-            console.log(`hello`);
+            // there's now a note on the page, therefore dont show the center lightbulb
+            // when creating a remove method make sure to remember to check if there are any notes on the page
+            setShowLightBulb(false);
         }
         // reinitializes not title and content to empty
         setNote({
@@ -101,8 +115,10 @@ function CreateNote(props){
                     </div>
                 </div>
             ):(
-                <input onClick={() => {setChange(true); setIsOpen(true);}}  className="take-a-note" type="text" placeholder="Take a note..." />
-
+                <div>
+                    <input onClick={() => {setChange(true); setIsOpen(true);}}  className="take-a-note" type="text" placeholder="Take a note..." />
+                    {showLightbulb? <CenterLightbulb /> : null}
+                </div>
             )}
         </div>
     );
