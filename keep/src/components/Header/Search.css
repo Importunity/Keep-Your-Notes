@@ -5,6 +5,7 @@
     height: 50px;
     border: 1px gray;
     background-color: lightgray;
+    outline: 0;
 }
 
 .fa-search { 
