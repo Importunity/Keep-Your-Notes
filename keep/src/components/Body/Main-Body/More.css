@@ -1,0 +1,11 @@
+#dropdown-options{
+    color: black;
+}
+
+.dropdown-toggle{
+    margin-bottom: 5px;
+}
+
+.dropdown-toggle:after { 
+    content: none;
+}

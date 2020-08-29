@@ -1,13 +1,15 @@
 import React from 'react';
 import './Note.css'
+import More from './More';
 
 function Note(props){
+
     return (
         <div className="note">
             <div className="card note-card">
                 <div className="card-header note-header">
                     <span>
-                        <i class="fas fa-thumbtack thumb items"></i>
+                        <i className="fas fa-thumbtack thumb note-footer-items"></i>
                         <p>{props.title}</p>
                     </span>
                 </div>
@@ -16,24 +18,24 @@ function Note(props){
                 </div>
                 <div className="card-footer note-footer">
                     <div className="container">
-                        <div className="row items">
+                        <div className="row note-footer-items">
                             <div className="col-md-2">
-                                <i class="fas fa-bell"></i>
+                                <i className="fas fa-bell"></i>
                             </div>
                             <div className="col-md-2">
-                                <i class="fas fa-user-plus" title="collaborator"></i>
+                                <i className="fas fa-user-plus" title="collaborator"></i>
                             </div>
                             <div className="col-md-2">
-                                <i class="fas fa-palette"></i>
+                                <i className="fas fa-palette"></i>
                             </div>
                             <div className="col-md-2">
-                                <i class="fas fa-image"></i>
+                                <i className="fas fa-image"></i>
                             </div>
                             <div className="col-md-2">
                                 <i className="fas fa-archive"></i>
                             </div>
                             <div className="col-md-2">
-                                <i class="fas fa-ellipsis-v"></i>
+                                <More id={props.id} onDelete={props.onDelete} />
                             </div>
                         </div>
                     </div>

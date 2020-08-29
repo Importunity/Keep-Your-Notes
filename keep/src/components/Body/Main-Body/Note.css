@@ -19,17 +19,16 @@
     padding-top: 0;
 }
 
-.items{
+.note-footer-items{
     opacity: 0;
     transition: all 300ms ease-in-out;
+    color: black;
 }
 
-.items:hover{
+.note-footer-items:hover{
     opacity: 1;
 }
 
 .thumb{
     float:right;
 }
-
-

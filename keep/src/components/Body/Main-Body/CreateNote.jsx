@@ -54,6 +54,7 @@ function CreateNote(props){
             };
         });
     }
+
     
     //adds a note and then reinitializes the note to empty
     function addNote() {
