@@ -3,7 +3,7 @@ import CreateNote from './CreateNote';
 import Note from './Note';
 import uuid from 'uuid';
 import {connect} from 'react-redux';
-import {getNotes} from '../../../actions/noteActions';
+import {getNotes, deleteNote} from '../../../actions/noteActions';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
@@ -33,25 +33,35 @@ function ContentArea(props){
 
 
     // deletes the note on click of triple dots and clicking delete from dropdown
-    function deleteNote(id) {
+    /*function deleteNote(id) {
         setNotes(prevNotes => {
             return prevNotes.filter((noteItem, index) => {
-            return index !== id;
+                return index !== id;
             });
         });
+    }*/
+    /*for(let i = 0; i < props.deleteNote; i++){
+        console.log(deleteNote[i]);
+    }*/
+    function deleteNote(id){
+        //console.log(id);
+        props.deleteNote(id);
     }
+    //console.log(props.deleteNote.id);
+
+
 
     return (
         <div className="container">
             <CreateNote onAdd={addNote} />
             {notes.map((note, index) => {
                 return (
-                    <Note key={index} id={index} title={note.title} content={note.content} onDelete={deleteNote} />);
+                    <Note key={index} id={index} title={note.title} content={note.content}  onDelete={deleteNote} />);
                 })
             }
             {notess.map((objectNote, index) => {
                 return (
-                    <Note key={index} id={index} title={objectNote.title} content={objectNote.content} />
+                    <Note key={index} id={index} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
                 );
             })}
         </div>
@@ -63,16 +73,10 @@ ContentArea.propTypes = {
     note: PropTypes.object.isRequired
 }
 
-/*function mapStateToProps(state){
-    return {
-        note: state.note
-    };
-}*/
-
 
 const mapStateToProps = state => ({
     note: state.note
 });
   
 
-export default connect(mapStateToProps, {getNotes})(ContentArea);
+export default connect(mapStateToProps, {getNotes, deleteNote})(ContentArea);

@@ -6,3 +6,10 @@ export const getNotes = () =>{
         type: GET_NOTES
     }
 };
+
+export const deleteNote = (id) => {
+    return {
+        type: DELETE_NOTE,
+        Payload: id
+    }
+};

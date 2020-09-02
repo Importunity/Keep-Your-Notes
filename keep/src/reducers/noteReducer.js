@@ -13,10 +13,19 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){
+
         case GET_NOTES:
             return {
+                // returns all the objects of the state
                 ...state
             };
+        case DELETE_NOTE:
+            return {
+                ...state,
+                // action.payload contains the id
+                notes: state.notes.filter(noteItem =>  noteItem.index !== action.payload )
+            };
+
         default:
             return state
     }
