@@ -3,7 +3,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import './More.css';
 
 function More(props){
-    console.log(props.id);
+    //console.log(props.id);
     function handleClick() {
         props.onDelete(props.id);
     }
