@@ -37,6 +37,7 @@ function CreateNote(props){
      * lightbulb shows on default
      */
     const[showLightbulb, setShowLightBulb] = React.useState(true);
+    
     /**
      * creates a note
      * currently the note is default which has an empty content and title
@@ -59,6 +60,7 @@ function CreateNote(props){
     //adds a note and then reinitializes the note to empty
     function addNote() {
         props.onAdd(note);
+        setShowLightBulb(false);
         setNote({
             title: "",
             content: ""
