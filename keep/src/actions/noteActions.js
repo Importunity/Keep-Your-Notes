@@ -10,6 +10,6 @@ export const getNotes = () =>{
 export const deleteNote = (id) => {
     return {
         type: DELETE_NOTE,
-        Payload: id
+        payload: id
     }
 };

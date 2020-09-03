@@ -10,3 +10,7 @@ const noteSchema = new Schema({
         required: true
     }
 })
+
+const Note = model('note', noteSchema)
+
+export default Note;

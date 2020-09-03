@@ -5,7 +5,7 @@ import './More.css';
 function More(props){
     //console.log(props.id);
     function handleClick() {
-        console.log(props.id);
+        console.log(`deleted id: ${props.id}`);
         props.onDelete(props.id);
     }
     return(

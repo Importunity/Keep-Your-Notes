@@ -44,7 +44,7 @@ function ContentArea(props){
         console.log(deleteNote[i]);
     }*/
     function deleteNote(id){
-        //console.log(id);
+        console.log(`id is: ${id}`);
         props.deleteNote(id);
     }
     //console.log(props.deleteNote.id);
@@ -59,9 +59,10 @@ function ContentArea(props){
                     <Note key={index} id={index} title={note.title} content={note.content}  onDelete={deleteNote} />);
                 })
             }
-            {notess.map((objectNote, index) => {
+            {notess.map(objectNote => {
+                //console.log(index);
                 return (
-                    <Note key={index} id={index} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
+                    <Note key={objectNote.id} id={objectNote.id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
                 );
             })}
         </div>

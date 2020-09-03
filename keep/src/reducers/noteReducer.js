@@ -20,10 +20,11 @@ export default function(state = initialState, action){
                 ...state
             };
         case DELETE_NOTE:
+            console.log(`payload is: ${action.payload}`);
             return {
                 ...state,
                 // action.payload contains the id
-                notes: state.notes.filter(noteItem =>  noteItem.index !== action.payload )
+                notes: state.notes.filter(note =>  note.id !== action.payload )
             };
 
         default:
