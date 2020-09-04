@@ -3,7 +3,7 @@ import CreateNote from './CreateNote';
 import Note from './Note';
 import uuid from 'uuid';
 import {connect} from 'react-redux';
-import {getNotes, deleteNote} from '../../../actions/noteActions';
+import {getNotes, deleteNote, addNote} from '../../../actions/noteActions';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
@@ -24,11 +24,17 @@ function ContentArea(props){
 
 
     // when adding a note, return the previous notes and the new note
-    function addNote(newNote) {
+    /*function addNote(newNote) {
         setNotes(prevNotes => {
             // returns the previous note and append the new note
             return [...prevNotes, newNote];
         });
+    }*/
+
+    function addNote(newNote){
+        newNote.id = uuid();
+        //console.log(newNote.id);
+        props.addNote(newNote);
     }
 
 
@@ -56,7 +62,7 @@ function ContentArea(props){
             <CreateNote onAdd={addNote} />
             {notes.map((note, index) => {
                 return (
-                    <Note key={index} id={index} title={note.title} content={note.content}  onDelete={deleteNote} />);
+                    <Note key={note.id} id={note.id} title={note.title} content={note.content}  onDelete={deleteNote} />);
                 })
             }
             {notess.map(objectNote => {
@@ -80,4 +86,4 @@ const mapStateToProps = state => ({
 });
   
 
-export default connect(mapStateToProps, {getNotes, deleteNote})(ContentArea);
+export default connect(mapStateToProps, {getNotes, deleteNote, addNote})(ContentArea);
