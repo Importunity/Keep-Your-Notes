@@ -1,14 +1,15 @@
 // where we check out actions for notes
 import uuid from 'uuid';
-import {GET_NOTES, ADD_NOTE, DELETE_NOTE} from '../actions/types';
+import {GET_NOTES, ADD_NOTE, DELETE_NOTE, NOTES_LOADING} from '../actions/types';
 const initialState = {
     notes: [
-        {id: uuid(), title: 'Hello', content: 'World'},
+        /*{id: uuid(), title: 'Hello', content: 'World'},
         {id: uuid(), title: 'Hello1', content: 'World1'},
         {id: uuid(), title: 'Hello2', content: 'World2'},
-        {id: uuid(), title: 'Hello3', content: 'World3'}
+        {id: uuid(), title: 'Hello3', content: 'World3'}*/
 
-    ]
+    ],
+    loading: false
 };
 
 export default function(state = initialState, action){
@@ -30,6 +31,11 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 notes: [action.payload, ...state.notes]
+            };
+        case NOTES_LOADING:
+            return {
+                ...state,
+                loading: true
             };
 
         default:
