@@ -1,6 +1,6 @@
-import {Schema, model} from 'mongoose';
-
-const noteSchema = new Schema({
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const NoteSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -11,6 +11,6 @@ const noteSchema = new Schema({
     }
 })
 
-const Note = model('note', noteSchema)
+const Note = mongoose.model('note', NoteSchema);
 
-export default Note;
+module.exports = Note;
