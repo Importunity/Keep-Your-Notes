@@ -4,7 +4,11 @@
   "description": "This is a new README file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "keep-install": "npm install --prefix keep",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "keep": "npm start --prefix keep",
+    "dev": "concurrently \"npm run server\" \"npm run keep\""
   },
   "repository": {
     "type": "git",
