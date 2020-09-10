@@ -63,4 +63,6 @@
     </li>
     <li>Create user interface for navigation bar</li>
     <li>Create Take a note... input </li>
+    <h6>Iteration 1</h6>
+    <li><img src="./Keep Documents/keep1.gif" width="auto" height="300px" /></li>
 </ol>
