@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Header/Navbar';
 import Frame from './components/Body/Frame';
-import Login from './components/Main/Login';
 
 // the provider helps us share states throughout the components
 import {Provider} from 'react-redux';
