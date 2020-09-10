@@ -8,10 +8,9 @@ const Note = require('../../models/Note');
  * @desc get all notes
  * @access public
  */
-router.get('/*', (request, response) => {
+router.get('/', (request, response) => {
     //response.json({msg: "notes works!"})
     Note.find()
-        .sort({title: -1})
         .then(notes => response.json(notes))
 });
 
