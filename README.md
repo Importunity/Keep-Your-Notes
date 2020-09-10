@@ -20,6 +20,7 @@
             <li>nodemon: so the app can refresh on file changes</li>
         </ul>
     </li>
+    <h5>Note: when creating mongo uri's remember to create environmental variables to store the uri instead of pushing the uri into public repo</h5>
     <li>Create backend Express connection to MongoDB</li>
     <li>Create frontend React App</li>
     <h5>Note: All of the components added below are merely skeletal structure and may be prone to change or are non-functional. Functionality will be added in the later stages and will be documented in another bulletpoint</h5>
@@ -60,7 +61,6 @@
             </li>
         </ul>
     </li>
-    <p>Note to self: remember to use env vars to store uri and sensitive informations in the future</p>
     <li>Create user interface for navigation bar</li>
     <li>Create Take a note... input </li>
 </ol>
