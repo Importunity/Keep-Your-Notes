@@ -24,19 +24,8 @@ let useClickOutside = (handler) =>{
     return domNode;
 };
 
-// used to show the center lightbulb of the page
-const CenterLightbulb = () => (
-    <div className="empty-content">
-        <i id="cn-lightbulb" className="far fa-lightbulb fa-5x"></i>
-        <h5>Notes you add appear here</h5>
-    </div>
-)
 
 function CreateNote(props){
-    /**
-     * lightbulb shows on default
-     */
-    const[showLightbulb, setShowLightBulb] = React.useState(true);
     
     /**
      * creates a note
@@ -60,7 +49,6 @@ function CreateNote(props){
     //adds a note and then reinitializes the note to empty
     function addNote() {
         props.onAdd(note);
-        setShowLightBulb(false);
         setNote({
             title: "",
             content: ""
@@ -89,9 +77,6 @@ function CreateNote(props){
             addNote();
             // reset change to false 
             setChange(false);
-            // there's now a note on the page, therefore dont show the center lightbulb
-            // when creating a remove method make sure to remember to check if there are any notes on the page
-            setShowLightBulb(false);
         }
         // reinitializes not title and content to empty
         setNote({
@@ -109,7 +94,7 @@ function CreateNote(props){
 
         <div ref={domNode} className="container take-a-note-container">
             {change && isOpen?(
-                <div  className="card w-50">
+                <div className="create-note-card card w-50">
                     <div className="card-header">
                         <TextareaAutoSize name="title" onChange={handleChange} value={note.title} className="input" type="text" placeholder="Title"></TextareaAutoSize>
                     </div>
@@ -120,7 +105,6 @@ function CreateNote(props){
             ):(
                 <div>
                     <input onClick={() => {setChange(true); setIsOpen(true);}}  className="take-a-note" type="text" placeholder="Take a note..." />
-                    {showLightbulb? <CenterLightbulb /> : null}
                 </div>
             )}
         </div>

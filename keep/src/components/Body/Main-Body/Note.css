@@ -32,3 +32,11 @@
 .thumb{
     float:right;
 }
+
+.note-card{
+    transition: all 300ms ease-in-out;
+}
+
+.note-card:hover{
+    box-shadow: 0 0 10px darkgray;
+}

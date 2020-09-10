@@ -1,13 +1,8 @@
 import React from 'react';
 import './Note.css'
 import More from './More';
-import CreateNote from './CreateNote';
-import { useState } from 'react';
 
 function Note(props){
-    //console.log(`id is ${props.id}`);
-    const [showLightBulb, setShowLightBulb] = useState(false);
-    
     return (
         <div className="note">
             <div className="card note-card">

@@ -20,8 +20,10 @@
     resize: none;
 }
 
-.card{
+
+.create-note-card{
     box-shadow: 0 0 10px darkgray;
+    
 }
 
 .card-header{
@@ -32,15 +34,4 @@
 
 .card-body{
     padding-bottom: 40px;
-}
-
-.empty-content{
-    margin-top: 10%;
-    color: gray;
-    margin-left: 10%;
-}
-
-#cn-lightbulb{
-    margin-left: 10%;
-    padding-bottom: 3%;
 }

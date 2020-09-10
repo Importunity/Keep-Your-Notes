@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CreateNote from './CreateNote';
 import Note from './Note';
-import uuid from 'uuid';
 import {connect} from 'react-redux';
 import {getNotes, deleteNote, addNote} from '../../../actions/noteActions';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import './ContentArea.css';
 
+// lightbulb
+const CenterLightbulb = () => (
+    <div className="empty-content">
+        <i id="ca-lightbulb" className="far fa-lightbulb fa-5x"></i>
+        <h5>Notes you add appear here</h5>
+    </div>
+)
 function ContentArea(props){
     //console.log(props.note.notes);
     useEffect(() =>{
@@ -14,13 +21,13 @@ function ContentArea(props){
         //console.log(note.getNotes);
     },[props.getNotes]);
 
-    const notess = props.note.notes;
-    //console.log(notess.length);
-    /*for(var i = 0; i < notess.length; i++){
-        console.log(notess[i]);
+    const notes = props.note.notes;
+    //console.log(notes.length);
+    /*for(var i = 0; i < notes.length; i++){
+        console.log(notes[i]);
     }*/
 
-    const [notes, setNotes] = useState([]);
+    //const [notes] = useState([]);
 
 
     // when adding a note, return the previous notes and the new note
@@ -32,7 +39,6 @@ function ContentArea(props){
     }*/
 
     function addNote(newNote){
-        newNote.id = uuid();
         //console.log(newNote.id);
         props.addNote(newNote);
     }
@@ -50,7 +56,7 @@ function ContentArea(props){
         console.log(deleteNote[i]);
     }*/
     function deleteNote(id){
-        console.log(`id is: ${id}`);
+        //console.log(`id is: ${id}`);
         props.deleteNote(id);
     }
     //console.log(props.deleteNote.id);
@@ -60,16 +66,22 @@ function ContentArea(props){
     return (
         <div className="container">
             <CreateNote onAdd={addNote} />
-            {notes.map((note, index) => {
+            {notes.length > 0? null : <CenterLightbulb />}
+            {/*notes.map((note, index) => {
                 return (
-                    <Note key={note.id} id={note.id} title={note.title} content={note.content}  onDelete={deleteNote} />);
-                })
+                    <Note key={note._id} id={note._id} title={note.title} content={note.content}  onDelete={deleteNote} />);
+                })*/
             }
-            {notess.map(objectNote => {
+            {notes.map((objectNote, index) => {
                 //console.log(index);
-                return (
-                    <Note key={objectNote.id} id={objectNote.id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
+                return(
+                    <div className="row">
+                        <Note key={objectNote._id} id={objectNote._id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
+                    </div>
                 );
+                /*return (
+                    <Note key={objectNote._id} id={objectNote._id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
+                );*/
             })}
         </div>
     );
