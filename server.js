@@ -22,12 +22,12 @@ app.use(morgan('dev'));
 app.use('/api/notes', notes);
 
 // create build folder if in production i.e npm run build
-if(process.env.NODE_ENV == 'production'){
+if(process.env.NODE_ENV === 'production'){
     // loads the build folder 
     app.use(express.static('keep/build'));
     app.get('*', (request, response) => {
         // directing to index.html
-        response.sendFile(path.resolve(__dirname, 'keep', 'build', 'index.html'));
+        response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 
