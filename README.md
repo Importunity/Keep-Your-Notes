@@ -6,7 +6,7 @@
     express, how to use hooks, functional components, redux, props, and more. May add in JWT Authentication if I get to adding it
  </p>
 <h1>
-    Keep Your Notes:
+    Development Process:
 </h1>
 <p>Descriptions: these are the steps I took to develop the application. There may be steps that will be modified/change in future iterations</p>
 <ol>
@@ -60,6 +60,7 @@
             </li>
         </ul>
     </li>
+    <p>Note to self: remember to use env vars to store uri and sensitive informations in the future</p>
     <li>Create user interface for navigation bar</li>
     <li>Create Take a note... input </li>
 </ol>
