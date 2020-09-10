@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "keep": "npm start --prefix keep",
-    "dev": "concurrently \"npm run server\" \"npm run keep\""
+    "dev": "concurrently \"npm run server\" \"npm run keep\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix keep && npm run build --prefix keep"
   },
   "repository": {
     "type": "git",
