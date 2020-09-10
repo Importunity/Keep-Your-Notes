@@ -2,7 +2,7 @@
   "name": "keep",
   "version": "1.0.0",
   "description": "This is a new README file",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "keep-install": "npm install --prefix keep",
     "start": "node server.js",

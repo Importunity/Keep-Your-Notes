@@ -74,14 +74,9 @@ function ContentArea(props){
             }
             {notes.map((objectNote, index) => {
                 //console.log(index);
-                return(
-                    <div className="row">
-                        <Note key={objectNote._id} id={objectNote._id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
-                    </div>
-                );
-                /*return (
+                return (
                     <Note key={objectNote._id} id={objectNote._id} title={objectNote.title} content={objectNote.content} onDelete={deleteNote} />
-                );*/
+                );
             })}
         </div>
     );
