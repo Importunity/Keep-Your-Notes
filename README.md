@@ -3,7 +3,7 @@
     What is Keep Your Notes?
 </h1>
 <p>In short it is just a remake of the google keep app created by google. I am remaking the app so I can learn react, 
-    express, how to use hooks, functional components, reflux, props, and more. May add in JWT Authentication if I get to adding it
+    express, how to use hooks, functional components, redux, props, and more. May add in JWT Authentication if I get to adding it
  </p>
 <h1>
     Keep Your Notes:
