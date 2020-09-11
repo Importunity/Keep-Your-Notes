@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const auth = require('../../middleware/auth');
 const Note = require('../../models/Note');
 
 /**
@@ -18,9 +18,9 @@ router.get('/', (request, response) => {
 /**
  * @route POST api/notes
  * @desc Create a note
- * @access public
+ * @access private
  */
-router.post('/', (request, response) => {
+router.post('/', auth, (request, response) => {
     const newNote = new Note({
         title: request.body.title,
         content: request.body.content
@@ -32,10 +32,10 @@ router.post('/', (request, response) => {
 /**
  * @route DELETE api/notes
  * @desc DELETE a note
- * @access public
+ * @access private
  */
 
- router.delete('/:id', (request, response) => {
+ router.delete('/:id', auth, (request, response) => {
      // fetches id from uri
      Note.findById(request.params.id)
         .then(note => note.remove().then(() => response.json({success: true})))
