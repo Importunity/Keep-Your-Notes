@@ -10,6 +10,7 @@
 </h1>
 <p>Descriptions: these are the steps I took to develop the application. There may be steps that will be modified/change in future iterations</p>
 <ol>
+    <h3>Plans for Iteration 1:</h3>
     <li>Create Documents: documents will be provided as soon as they're scanned.</li>
     <li>Add backend dependencies: bodyparser, concurrently, express, morgan, nodemon
         <ul>
@@ -62,9 +63,48 @@
         </ul>
     </li>
     <li>Create user interface for navigation bar</li>
-    <li>Create Take a note... input </li>
+    <li>Create Take a note... inside main body 
+        <ul>
+            <li>Create on click expand</li>
+            <li>Create on click outside to close</li>
+        </ul>
+    </li>
+    <li>Create on click outside to create Note
+        <ul>
+            <li>Create footer icons
+                <ul>
+                    <li>click ellipsis to dropdown and delete note</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Create Actions
+        <ul>
+            <li>note actions to:
+                <ul>
+                    <li>Retrieve Notes from array</li>
+                    <li>Delete Notes from array</li>
+                    <li>Add Notes into array</li>
+                </ul>
+            </li>
+            <li>Types for the type of actions that will be used, such as the actions listed above</li>
+        </ul>
+    </li>
+    <li>Create Reducers
+        <ul>
+            <li>Create reducers for notes, reducers are meant to "reduce" or clean up your code</li>
+        </ul>
+    </li>
     <h6>Iteration 1</h6>
     <li><img src="./Keep Documents/keep1.gif" width="auto" height="300px" /></li>
+    <h3>Plans for Iteration 2:</h3>
+    <li>Remove all "temp" values from the array</li>
+    <li>Load in notes from database</li>
+    <li>Deploy the web application onto heroku</li>
+    <li>Create uglify Register/Login UI for the user -- will be beautified in the future this is just temp</li>
+    <li>Create login component</li>
+    <li>Create logout component</li>
+    <li>More will be added... I have decided to add in JWT authentication also</li>
 </ol>
 <hr>
 <h1> Deployed Application Link Below: </h1>
