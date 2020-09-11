@@ -15,7 +15,7 @@
     <li>Create Documents: documents will be provided as soon as they're scanned.</li>
     <li>Add backend dependencies: bodyparser, concurrently, express, morgan, nodemon
         <ul>
-            <li>body-parser: parses incoming request bodies in middleware </li>
+            <li>bcrypt: for hashing password and using it to salt the password</li>
             <li>concurrently: used so you can run frontend and backend simultaneously </li>
             <li>express: backend</li>
             <li>morgan: middleware i.e communication and i/o</li>
@@ -105,6 +105,13 @@
     <li>Create uglify Register/Login UI for the user -- will be beautified in the future this is just temp</li>
     <li>Create login component</li>
     <li>Create logout component</li>
+    <li>Create user schema/model </li>
+    <li>Create users routes 
+        <ul>
+            <li>User validations -- will be edited soon</li>
+        </ul>
+    </li>
+    
     <li>More will be added... I have decided to add in JWT authentication also</li>
 </ol>
 <hr>
