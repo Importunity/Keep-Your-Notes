@@ -6,9 +6,10 @@ dotenv.config();
 
 // set up default mongoose connection 
 var mongoDB = process.env.MONGODB_URI;
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
     .then(() => console.log("Database Connected"))
     .catch(err => console.log(err));
+
 
 // get the default connection
 var db = mongoose.connection;
