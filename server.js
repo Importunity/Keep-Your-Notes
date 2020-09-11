@@ -4,22 +4,26 @@ const bodyParser =  require('body-parser');
 const cors = require('cors');
 const path = require('path');
 require('./config/config');
-const notes = require('./routes/api/notes.js');
 const { request } = require('http');
+
+// routes
+const notes = require('./routes/api/notes.js');
+const users = require('./routes/api/users.js');
+const authentication = require('./routes/api/auth.js')
 
 const app = express();
 
 // cors
 //app.use(cors);
-// bodyparser
-app.use(bodyParser.json());
+// bodyparser -- no need for it anymore as express has a built in body parser
+app.use(express.json());
 //logger 
 app.use(morgan('dev'));
 
 // routes
-//app.use('/api/users', userRoutes);
-//app.use('/api/auth', authRoutes);
 app.use('/api/notes', notes);
+app.use('/api/users', users);
+app.use('/api/auth', authentication);
 
 // create build folder if in production i.e npm run build
 if(process.env.NODE_ENV === 'production'){
