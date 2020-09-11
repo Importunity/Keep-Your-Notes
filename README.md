@@ -111,7 +111,6 @@
             <li>User validations -- will be edited soon</li>
         </ul>
     </li>
-    
     <li>More will be added... I have decided to add in JWT authentication also</li>
 </ol>
 <hr>
