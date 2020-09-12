@@ -11,7 +11,7 @@ function auth(request, response, next){
     // check for token
     if(!token){
         // 401 is used for unauthorized 
-        response.status(401).json({msg: 'no token, so access denied'});
+        return response.status(401).json({msg: 'no token, so access denied'});
     }
 
     try{
