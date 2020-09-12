@@ -116,3 +116,4 @@
 <hr>
 <h1> Deployed Application Link Below: </h1>
 <a href="https://sheltered-stream-33917.herokuapp.com/">Link</a>
+The deployed version currently does not allow to post notes at the moment, as I am currently working on JWT authentication for the user login/logout, therefore you will get a 401 error. The error is purposely there and the deployment may be rollback just for the purpose of posting. 
