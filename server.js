@@ -31,7 +31,7 @@ if(process.env.NODE_ENV === 'production'){
     app.use(express.static('keep/build'));
     app.get('*', (request, response) => {
         // directing to index.html
-        response.sendFile(path.resolve(__dirname, 'keep', 'build', 'index.html'));
+        response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 
