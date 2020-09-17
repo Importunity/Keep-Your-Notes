@@ -2,6 +2,10 @@
 import {GET_NOTES, ADD_NOTE, DELETE_NOTE, NOTES_LOADING} from './types';
 import axios from 'axios';
 
+import {tokenConfig} from './authActions';
+import {getErrors} from './errorActions';
+
+
 export const getNotes = () => dispatch =>{
     dispatch(setNotesLoading());
     axios
@@ -13,7 +17,10 @@ export const getNotes = () => dispatch =>{
                 type: GET_NOTES,
                 payload: response.data
             })
-        )
+        ).catch(error => 
+            dispatch(
+                getErrors(error.response.data, error.response.status))
+            );
     /*dispatch(setNotesLoading());
     axios
     // getting the notes from the backend 
@@ -26,18 +33,22 @@ export const getNotes = () => dispatch =>{
     
 };
 
-export const deleteNote = (id) => dispatch => {
+export const deleteNote = (id) => (dispatch, getState) => {
     axios
-        .delete(`/api/notes/${id}`)
+        .delete(`/api/notes/${id}`, tokenConfig(getState))
         .then(response => dispatch({
             type: DELETE_NOTE,
             payload: id
-        }))
+        })).catch(error => 
+            dispatch(
+                getErrors(error.response.data, error.response.status))
+            );
     /*return {
         type: DELETE_NOTE,
         payload: id
     }*/
 };
+
 
 /*export const addNote = (note) => {
     return {
@@ -46,13 +57,16 @@ export const deleteNote = (id) => dispatch => {
     }
 };*/
 
-export const addNote = (note) => dispatch => {
+export const addNote = (note) => (dispatch, getState) => {
     axios
-        .post('/api/notes', note)
+        .post('/api/notes', note, tokenConfig(getState))
         .then(response => dispatch({
             type: ADD_NOTE,
             payload: response.data
-        }))
+        })).catch(error => 
+            dispatch(
+                getErrors(error.response.data, error.response.status))
+            );
 };
 
 
