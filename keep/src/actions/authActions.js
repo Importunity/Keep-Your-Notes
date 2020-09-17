@@ -26,10 +26,68 @@ export const loadUser = () => (dispatch, getState) => {
         });
 }
 
+// Register user
+export const register = ({name, email, password}) => dispatch => {
+    // headers
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    // request body
+    const body = JSON.stringify({name, email, password});
+    axios.post('/api/users', body, config)
+        .then(response => dispatch({
+            type: REGISTER_SUCCESS,
+            payload: response.data
+        }))
+        .catch(error => {
+            dispatch(getErrors(error.response.data, error.response.status, 'REGISTER_FAIL'));
+            dispatch({
+                type: REGISTER_FAIL
+            })
+        })
+}
+
+// login user
+export const login = ({email, password}) => dispatch => {
+    // headers
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    // request body
+    const body = JSON.stringify({email, password});
+    axios.post('/api/auth', body, config)
+        .then(response => dispatch({
+            type: LOGIN_SUCCESS,
+            payload: response.data
+        }))
+        .catch(error => {
+            dispatch(getErrors(error.response.data, error.response.status, 'LOGIN_FAIL'));
+            dispatch({
+                type: LOGIN_FAIL
+            })
+        })
+}
+
+// logout user
+export const logout = () => {
+    return {
+        type: LOGOUT_SUCCESS
+    }
+}
+
 // setup config/headers and token
 export const tokenConfig = getState => {
         // this will go into the authReducer and retrieve the token from the initial state localstorage
-        const token = getState().user.token;
+        // the "auth" can be found at combinereducers
+        const token = getState().auth.token;
+        //console.log(`state token: ${token}`);
+        //console.log(`token is: ${getState().auth.token}`);
 
         // headers
         const config = {
