@@ -22,13 +22,13 @@ router.post('/', (request, response) => {
     
     // validation
     if(!name || !email || !password){
-        return response.status(400).json({msg: 'please enter in the fields'});
+        return response.status(400).json({msg: 'Please Fill In The Fields'});
     }
 
     User.findOne({email})
         .then(user => {
             // check if user exists, user is a boolean
-            if(user) return response.status(400).json({msg: 'User exists'})
+            if(user) return response.status(400).json({msg: 'This user already exists'})
 
             // creates a new user
             const newUser = new User({
