@@ -8,9 +8,11 @@ const initialState = {
 };
 
 export default function(state = initialState, action){
+    //console.log(state);
     switch(action.type){
         // will run on entrance
         case USER_LOADING:
+            //console.log(localStorage.getItem('token'));
             return{
                 // returns the state and sets the loading user to true
                 ...state,
@@ -26,6 +28,8 @@ export default function(state = initialState, action){
                 user: action.payload
             };
         case LOGIN_SUCCESS: case REGISTER_SUCCESS:
+            //console.log(action.payload.user.token);
+            localStorage.setItem('token', action.payload.user.token);
             return{
                 // when user has been loaded or register is success, then sets loading to false and authentication to true
                 ...state,
