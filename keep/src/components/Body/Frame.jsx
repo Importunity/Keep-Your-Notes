@@ -2,8 +2,6 @@ import React from 'react';
 import SideNav from './Side-Navigation/SideNav';
 import ContentArea from './Main-Body/ContentArea';
 
-
-
 function Frame(){
     return(
         <div>
