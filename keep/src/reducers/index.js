@@ -2,10 +2,10 @@
 import {combineReducers} from 'redux';
 import noteReducer from './noteReducer';
 import errorReducer from './errorReducer';
-import userReducer from './authReducer';
+import authReducer from './authReducer';
 
 export default combineReducers({
     error: errorReducer,
-    user: userReducer,
+    auth: authReducer,
     note: noteReducer
 });
