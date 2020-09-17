@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SideNav from './Side-Navigation/SideNav';
 import ContentArea from './Main-Body/ContentArea';
+import Navbar from '../Header/Navbar';
 
-function Frame(){
+function Frame(props){
     return(
         <div>
+            <Navbar mainlocation={props.mainlocation}/>
             <div className="row">
                 <div className="col-2">
                     <SideNav />

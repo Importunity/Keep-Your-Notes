@@ -17,8 +17,10 @@ import store from '../../store';
 import { loadUser } from '../../actions/authActions';
 
 
+
 function Main(props){
 
+ 
 
        // user information
    const [info, setInfo] = useState({email: "", password: "", msg: null});
@@ -68,6 +70,7 @@ function Main(props){
         event.target.reset();
         props.clearErrors();
 
+
     };
     //console.log(info);
     const handleChange = event => {
@@ -80,17 +83,16 @@ function Main(props){
     const [register, setRegister] = useState(false);
 
 
+
     const mainlocation = window.location.href.replace('/#', '/');
     //console.log(`mainlocation is: ${mainlocation}`);
-
     return (
         
         <div>
         {isAuthenticated? (
             <Provider store={store}>
             <div className="header">
-                <Navbar mainlocation={mainlocation}/>
-                <Frame />
+                <Frame mainlocation={mainlocation}/>
             </div>
             </Provider>
         ) :(
@@ -128,7 +130,7 @@ function Main(props){
                                     {/*<li className="tab active">
                                         <a className="main-text" href="/#" form="login-form">Login</a>
                             </li>*/}
-                                    <button form="login-form">Login</button>
+                                    <button form="login-form" className="login-btn">Login</button>
                                     <li className="tab active">
                                         <a className="main-text" href="/#" onClick={() => setRegister(true)}>Register</a>
                                     </li>   

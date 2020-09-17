@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from './Logo';
 import MainMenu from './Main-Menu';
 import './Navbar.css'
@@ -10,6 +10,8 @@ import Logout from './Logout';
 
 import store from '../../store';
 import { loadUser } from '../../actions/authActions';
+
+
 
 function Navbar(props){
     //console.log(props.mainlocation);

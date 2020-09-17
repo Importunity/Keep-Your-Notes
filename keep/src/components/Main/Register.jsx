@@ -108,7 +108,7 @@ function Register(props){
                         ) : (
                             null
                         )}
-                        <button >Register</button>
+                        <button className="register-btn">Submit</button>
                         <li className="tab active return">
                             <a className="main-text" href={props.mainlocation} type="submit" value="submit">Return To Main Page</a>
                         </li>
