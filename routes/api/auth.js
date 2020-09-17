@@ -11,7 +11,7 @@ const auth = require('../../middleware/auth');
  * @access public
  */
 router.post('/', (request, response) => {
-    const {name, email, password } = request.body;
+    const {email, password } = request.body;
     
     // validation
     if(!email || !password){
