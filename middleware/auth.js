@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 function auth(request, response, next){
     // header of the token
     const token = request.header('x-auth-token');
-    //console.log(token);
+    //console.log(`token is: ${token}`);
     // check for token
     if(!token){
         // 401 is used for unauthorized 
@@ -15,8 +15,8 @@ function auth(request, response, next){
     }
 
     try{
-        // verify token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // verify token
         // add user from payload
         request.user = decoded;
         // calls the next piece of middleware
